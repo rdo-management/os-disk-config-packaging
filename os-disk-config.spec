@@ -10,9 +10,9 @@ Source0:	https://github.com/rdo-management/os-disk-config/archive/%{version}.tar
 
 BuildArch:	noarch
 BuildRequires:	python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  python-d2to1
-BuildRequires:  python2-devel
+BuildRequires:	python-setuptools
+BuildRequires:	python-d2to1
+BuildRequires:	python2-devel
 
 Requires:	python-blivet
 
@@ -24,16 +24,15 @@ of a JSON or yaml file.
 %setup -q
 
 %build
-%{__python2} setup.py build
+%{__python} setup.py build
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root %{buildroot}
-
+%{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
-%doc README.md
+#%doc README.md
 %doc LICENSE
-%{_bindir}/os_disk_config
+%{_bindir}/os-disk-config
 %{python2_sitelib}/os_disk_config
 %{python2_sitelib}/*.egg-info
 
