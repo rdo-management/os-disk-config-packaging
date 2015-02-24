@@ -6,7 +6,7 @@ Summary:	Disk configuration and modification tool
 Group:		Development/Languages
 License:	ASL 2.0
 URL:		https://github.com/rdo-management/os-disk-config
-Source0:	https://github.com/rdo-management/os-disk-config/archive/%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz 
 
 BuildArch:	noarch
 BuildRequires:	python-pbr
@@ -30,7 +30,7 @@ of a JSON or yaml file.
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 
 %files
-#%doc README.md
+%doc README.rst
 %doc LICENSE
 %{_bindir}/os-disk-config
 %{python2_sitelib}/os_disk_config
